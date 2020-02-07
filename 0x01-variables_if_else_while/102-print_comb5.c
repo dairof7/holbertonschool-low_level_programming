@@ -23,9 +23,12 @@ int main(void)
 				putchar(32);
 				putchar(m + '0');
 				putchar(n + '0');
-				putchar(',');
-				putchar(' ');
-			}
+				if ((k * 10 + l) < 98)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+		}
 		}
 	}
 	putchar('\n');
