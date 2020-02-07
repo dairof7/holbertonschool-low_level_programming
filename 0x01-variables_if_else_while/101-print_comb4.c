@@ -6,31 +6,27 @@
  */
 int main(void)
 {
-	int i, j, l;
-	int k = 0;
-	int m = 0;
-	int x = 0;
+#include <stdio.h>
+int main(void)
+{
+	int i, j, k, l;
 
-	for (i = 48; i <= 57; i++)
+	for (i = 0; i < 1000; i++)
 	{
-		for (j = 49 + k; j <= 57; j++)
+		j = (i / 100);
+		k = (i / 10) % 10;
+		l = i % 10;
+		if ((j < k) && (k < l))
 		{
-			for (l = 50 + m; l <= 57; l++)
+			putchar(j + 48);
+			putchar(k + 48);
+			putchar(l + 48);
+			if ((j * 100 + k * 10 + l) < 789)
 			{
-			putchar(i);
-			putchar(j);
-			putchar(l);
-				if (!((i == 55) && (j == 56) && (l == 57)))
-				{
-					putchar(',');
-					putchar(' ');
-				}
+				putchar(',');
+				putchar(' ');
 			}
-			m++;
 		}
-		k++;
-	x++;
-	m = x;
 	}
 	putchar('\n');
 	return (0);
