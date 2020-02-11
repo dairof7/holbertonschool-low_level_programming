@@ -1,6 +1,7 @@
 /**
  * main - Entry point
  * Description: kslfjkdls
+ * @c: char
  * Return: Always 0 (Success)
  */
 
