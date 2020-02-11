@@ -7,11 +7,12 @@
 
 int main(void)
 {
-	char c_[10] = "Holberton\n";
+	char c_[9] = "Holberton";
 
-	for (int i = 0; i <= 9; i++)
+	for (int i = 0; i <= 8; i++)
 	{
 		_putchar(c_[i]);
 	}
+	_putchar('\n');
 	return (0);
 }
