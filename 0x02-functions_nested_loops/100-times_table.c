@@ -1,10 +1,11 @@
 #include "holberton.h"
 /**
- * times_table - prints tables 9 times
+ * print_times_table - prints tables 9 times
+ * @n: integer number
  */
 void print_times_table(int n)
 {
-        int j, k, res;
+	int j, k, res;
 
 	if ((n <= 15) && (n > 0))
 	{
@@ -19,14 +20,14 @@ void print_times_table(int n)
 				}
 				else
 				{
-					if  ((res / 100) ==0)
+					if  ((res / 100) == 0)
 					{
 						_putchar(' ');
 						if (((res / 10)) % 10 == 0)
-                                                {
-                                                        _putchar(' ');
-                                                        _putchar((res % 10) + '0');
-                                                }
+						{
+							_putchar(' ');
+							_putchar((res % 10) + '0');
+						}
 						else
 						{
 							_putchar(((res / 10) % 10) + '0');
