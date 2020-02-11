@@ -15,9 +15,7 @@ void print_times_table(int n)
 			{
 				res = j * k;
 				if (k == 0)
-				{
 					_putchar('0');
-				}
 				else if (((res < 10) && (res > 0)) || (j == 0))
 				{
 					_putchar(' ');
