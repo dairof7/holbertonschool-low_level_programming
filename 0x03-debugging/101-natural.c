@@ -1,21 +1,27 @@
-#include <stdio.h>
 #include "holberton.h"
+#include <stdio.h>
+#include <math.h>
+
 /**
- * main - Entry point
- *
- * Return: ALways 0 (Success)
+ * main - main block
+ * Description: Print the sum of all multiples of 3 or 5 below 1024.
+ * Return: 0
  */
 int main(void)
 {
-	int i, cont;
+	int i = 1;
+	int total = 0;
 
-	for (i = 1; i < 1024; i++)
+	while (i < 1024)
 	{
-		if ((i % 3) == 0 || (i % 5) == 0)
-		{
-			cont = cont + i;
-		}
+		if (i % 3 == 0)
+			total += i;
+		else if (i % 5 == 0)
+			total += i;
+
+		i++;
 	}
-	printf("%d\n", cont);
+	printf("%d\n", total);
+
 	return (0);
 }
