@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include "holberton.h"
 /**
  * main - Entry point
  *
@@ -7,15 +7,15 @@
  */
 int main(void)
 {
-	int a, sum;
+	int i, cont;
 
-	for (a = 0; a < 1024; a++)
+	for (i = 1; i < 1024; i++)
 	{
-		if ((a % 3) == 0 || (a % 5) == 0)
+		if ((i % 3) == 0 || (i % 5) == 0)
 		{
-			sum += a;
+			cont = cont + i;
 		}
 	}
-	printf("%d\n", sum);
+	printf("%d\n", cont);
 	return (0);
 }
