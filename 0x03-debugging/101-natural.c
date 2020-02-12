@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
  * main - Entry point
  *
@@ -6,13 +7,14 @@
  */
 int main(void)
 {
-	int i, count;
+	int i;
+	int sum;
 
 	for (i = 0; i < 1024; i++)
 	{
 		if ((i % 3 == 0) || (i % 5 == 0))
-			count = count + i;
+			sum = sum + i;
 	}
-	printf("%d\n", count);
+	printf("%d\n", sum);
 	return (0);
 }
