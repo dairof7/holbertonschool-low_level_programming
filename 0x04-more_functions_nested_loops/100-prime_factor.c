@@ -14,7 +14,6 @@ int main(void)
 		{
 			if (numero != i)
 			{
-				printf("%ld, ", i);
 				numero = numero / i;
 				continue;
 			}
