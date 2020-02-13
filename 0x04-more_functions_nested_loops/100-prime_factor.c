@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
-	long int numero=2000000, i=2;
+	long int numero=612852475143, i=2;
 
 	while(i<=numero)
 	{
