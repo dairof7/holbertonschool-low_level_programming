@@ -32,4 +32,6 @@ int main(void)
 		}
 		primo++;
 	}
+
+	return (0);
 }
