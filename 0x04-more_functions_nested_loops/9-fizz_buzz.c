@@ -1,12 +1,11 @@
 #include <stdio.h>
 /**
- * print_diagonal - function that draws a diagonal line on the terminal..
- * @n: integer number
+ * main - fizzbuzz program
  * Return: Always 0.
  *
  */
 
-int main (void)
+int main(void)
 {
 	int j;
 
@@ -19,10 +18,12 @@ int main (void)
 			else if (j % 5 == 0)
 				printf("Buzz");
 			else
-				printf("%d",j);
+				printf("%d", j);
 			if (j < 100)
 				printf(" ");
 			else
 				printf("\n");
 		}
+
+	return (0);
 }
