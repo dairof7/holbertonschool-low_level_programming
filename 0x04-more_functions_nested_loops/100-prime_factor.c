@@ -1,36 +1,23 @@
 #include <stdio.h>
-/**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	long int primo = 2, res = 0, d, ne = 612852475143;
 
-		while (ne >= primo)
+int main(){
+	long int numero=2000000, i=2;
+
+	while(i<=numero)
+	{
+		if((numero%i)==0)
 		{
-			for (d = 2; d < primo; ++d)
-			{
-				if (primo % d == 0)
-					break;
+			if (numero != i){
+				printf("%ld, ",i);
+				numero=numero/i;
+				continue;
 			}
-			if (d == primo)
-				while (ne % primo == 0)
-				{
-					if (ne != primo)
-					{
-						printf("%ld, ", primo);
-						res = ne / primo;
-						ne = res;
-					}
 			else
 			{
-				printf("%ld\n", primo);
-				break;
+				printf("%ld\n",i);
 			}
 		}
-		primo++;
+		i++;
 	}
 
 	return (0);
