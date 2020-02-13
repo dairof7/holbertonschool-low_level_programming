@@ -15,7 +15,6 @@ int main(void)
 			if (numero != i)
 			{
 				numero = numero / i;
-				continue;
 			}
 			else
 			{
