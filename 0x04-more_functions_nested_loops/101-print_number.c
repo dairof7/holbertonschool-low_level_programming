@@ -1,48 +1,28 @@
 #include "holberton.h"
+
 /**
- * print_number - check the code for Holberton School students.
- * @n: is the number of lines to print
- * Return: Always 0.
- *
- *
+ * print_number - prints and integer
+ * @n: the integer input to be printed
+ * Return: nada
  */
 void print_number(int n)
 {
-	int a, b, c, d, e;
+	if (n > -10 && n < 10)
+	{
+		if (n < 0)
+		{
+			_putchar('-');
+			n = n * -1;
+		}
+		_putchar(n + '0');
+	}
+	else
+	{
+		print_number(n / 10);
+		n = n % 10;
+		if (n < 0)
+			n = n * -1;
+		_putchar(n + '0');
+	}
 
-	if (n % 10 < 0)
-	{
-		_putchar('-');
-		n = n * -1;
-	}
-	a = n % 10;
-	b = (n / 10) % 10;
-	c = (n / 100) % 10;
-	d = (n / 1000) % 10;
-	e = (n / 10000) % 10;
-	if ((n > 0) && (n <= 9))
-	{
-		_putchar(a + '0');
-	}
-	else if ((n >= 10) && (n <= 99))
-	{
-		_putchar(b + '0');
-		_putchar(a + '0');
-	}
-	else if ((n >= 100) && (n <= 999))
-	{
-		_putchar(c + '0');
-		_putchar(b + '0');
-		_putchar(a + '0');
-	}
-	else if ((n >= 1000) && (n <= 9999))
-	{
-		_putchar(e + '0');
-		_putchar(d + '0');
-		_putchar(c + '0');
-		_putchar(b + '0');
-		_putchar(a + '0');
-	}
-	else if (n == 0)
-		_putchar('0');
 }
