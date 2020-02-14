@@ -8,7 +8,7 @@
  */
 void print_number(int n)
 {
-	int a, b, c, d;
+	int a, b, c, d, e;
 
 	if (n % 10 < 0)
 	{
@@ -19,6 +19,7 @@ void print_number(int n)
 	b = (n / 10) % 10;
 	c = (n / 100) % 10;
 	d = (n / 1000) % 10;
+	e = (n / 10000) % 10;
 	if ((n > 0) && (n <= 9))
 	{
 		_putchar(a + '0');
@@ -36,6 +37,7 @@ void print_number(int n)
 	}
 	else if ((n >= 1000) && (n <= 9999))
 	{
+		_putchar(e + '0');
 		_putchar(d + '0');
 		_putchar(c + '0');
 		_putchar(b + '0');
