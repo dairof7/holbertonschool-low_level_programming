@@ -18,6 +18,6 @@ int i = 0;
 		dest[i] = src[i];
 		i++;
 	}
-
-	return (dest);
+	dest[i] = src[i];
+	return (src);
 }
