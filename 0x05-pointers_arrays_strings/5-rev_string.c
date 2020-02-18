@@ -15,12 +15,13 @@ int i = 0, j;
 	{
 		i++;
 	}
+	i--;
 	char b[i];
 
-	for (j = 0; j <= i - 1; j++)
+	for (j = 0; j <= i; j++)
 	{
-		b[j] = s[i - 1 - j];
+		b[j] = s[i - j];
 	}
-	for (j = 0; j <= i - 1; j++)
+	for (j = 0; j <= i; j++)
 		s[j] = b[j];
 }
