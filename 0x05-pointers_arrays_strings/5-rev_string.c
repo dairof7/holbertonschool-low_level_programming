@@ -16,11 +16,11 @@ int i = 0, j;
 		i++;
 	}
 	char b[i];
+
 	for (j = 0; j <= i - 1; j++)
 	{
 		b[j] = s[i - 1 - j];
 	}
-	for (j = 0; j <= i-1; j++)
+	for (j = 0; j <= i - 1; j++)
 		s[j] = b[j];
-	
 }
