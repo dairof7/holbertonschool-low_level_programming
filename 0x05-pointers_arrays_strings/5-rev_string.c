@@ -17,7 +17,6 @@ int i = 0, j;
 	}
 	i--;
 	char b[i];
-//	printf("<%lu>", sizeof(s));
 
 	for (j = 0; j <= i; j++)
 	{
@@ -25,5 +24,4 @@ int i = 0, j;
 	}
 	for (j = 0; j <= i; j++)
 		s[j] = b[j];
-//printf("<%lu>", sizeof(s));
 }
