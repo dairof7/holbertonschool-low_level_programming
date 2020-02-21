@@ -24,11 +24,6 @@ char *rot13(char *t)
 					t[i] = n[j];
 					break;
 				}
-				if (t[i] == p[j])
-				{
-					t[i] = n[j];
-					break;
-				}
 			}
 		}
 
