@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * *_strchr - find and cut
  * @s: array in
@@ -10,11 +11,16 @@ char *_strchr(char *s, char c)
 {
 	int j;
 
-	for (j = 0; s[j]; j++)
+	for (j = 0; s[j] != '\0'; j++)
 	{
+		printf("%d",j);
 		if (s[j] == c)
 			return (s + j);
 	}
-
+	if (s[j] == '\0')
+	{
+			printf("%d",j);
+		return (s + j);
+	}
 	return (0);
 }
