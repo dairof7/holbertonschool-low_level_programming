@@ -1,26 +1,20 @@
 #include "holberton.h"
 /**
- * *_memcpy - copy data in array
- * @dest: array dest
- * @src: array orig
- * @n: numers os bytes to copy in the arrar dest
+ * *_strchr - find and cut
+ * @s: array in
+ * @c: char to search
  * Return: Always 0.
  */
 
 char *_strchr(char *s, char c)
 {
-	int i, n, j;
+	int j;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (j = 0; s[j] != '\0'; j++)
 	{
-		if (s[i] == c)
-			n = i;
+		if (s[j] == c)
+			return (s + j);
 	}
-	char dest[i];
-	for (j = n; j < i; j++)
-		{
-			dest[j] = s[j];
-		}
 
-	return (dest);
+	return (0);
 }
