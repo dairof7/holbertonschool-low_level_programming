@@ -26,11 +26,9 @@ char *_strstr(char *haystack, char *needle)
 			}
 			else
 				break;
-			}
-			if (c == s)
-			}
-				return (haystack + i);
-			}
 		}
+			if (c == s)
+				return (haystack + i);
+	}
 	return (NULL);
 }
