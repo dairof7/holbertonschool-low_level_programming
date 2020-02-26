@@ -1,26 +1,51 @@
 #include "holberton.h"
 #include <stdio.h>
-char *rev(char *s, char *s1);
+int _strlen_recursion(char *s);
+
+int compare(char *s1, char *s2);
 /**
- * is_palindrome - returns 1 if the input integer is a prime number
- * @n: int number in
- * Return: the square root
+ * is_palindrome - returns 1 if a string is a palindrome and 0 if not
+ * @s: char pointer
+ * Return: 1 if a string is palindrome
  */
 
 int is_palindrome(char *s)
 {
-	char *s2;
-	char s3[5];
-	s2 = rev(s, s3);
-	printf("%s<%s>", s3,s2);
-	return (0);
+	int size = _strlen_recursion(s);
+	int r = 0;
+
+	r = compare(s, (s + size - 1));
+
+	return (r);
 }
-char *rev(char *s, char *s1)
+/**
+ * _strlen_recursion - return the size of string
+ * @s: char pointer
+ * Return: integer with size
+ */
+int _strlen_recursion(char *s)
 {
+	int n = 0;
+
 	if (*s != '\0')
 	{
-		rev(s + 1, s1);
-		*s1 = *s;
+		n = _strlen_recursion(s + 1);
+		n++;
 	}
-	return (s1);
+	return (n);
+}
+/**
+ * compare - return the size of string
+ * @s1: char pointer
+ * @s2: char pointer
+ * Return: integer with size
+ */
+int compare(char *s1, char *s2)
+{
+	if (s1 > s2)
+		return (1);
+	if (*s1 != *s2)
+		return (0);
+
+	return (compare(s1 + 1, s2 - 1));
 }
