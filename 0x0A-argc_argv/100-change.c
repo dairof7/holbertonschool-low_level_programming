@@ -18,42 +18,47 @@ int main(int argc, char *argv[])
 	{
 		if (digit(argv[1]))
 			cents = atoi(argv[1]);
+		if (cents <= 0)
+		{
+			printf("-0\n");
+			return (0);
+		}
 		while (cents > 0)
 		{
-			if (cents % 25 == 0)
+			if (cents >= 25)
 			{
 				cents = cents - 25;
 				cont++;
 			}
-			else if (cents % 10 == 0)
+			else if (cents >= 10)
 			{
 				cents = cents - 10;
 				cont++;
 			}
-			else if (cents % 5 == 0)
+			else if (cents >= 5)
 			{
 				cents = cents - 5;
 				cont++;
 			}
-			else if (cents % 2 == 0)
+			else if (cents >= 2)
 			{
 				cents = cents - 2;
 				cont++;
 			}
-			else if (cents % 1 == 0)
+			else if (cents >= 1)
 			{
 				cents = cents - 1;
 				cont++;
 			}
 		}
-		printf("%d\n",  cont);
 	}
 	else
 	{
-		printf("Error\n");
+		printf("-Error\n");
 		return (1);
 	}
 
+	printf("%d\n",  cont);
 	return (0);
 }
 /**
