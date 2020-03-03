@@ -25,13 +25,12 @@ char *str_concat(char *s1, char *s2)
 			*(str_ + i) = *(s1 + i);
 			i++;
 		}
-		while (j < sizes2)
+		while (j < sizes2+1)
 		{
 			*(str_ + i) = *(s2 + j);
 			j++;
 			i++;
 		}
-		*(str_ + i) = '\0';
 	}
 	else
 		return (NULL);
