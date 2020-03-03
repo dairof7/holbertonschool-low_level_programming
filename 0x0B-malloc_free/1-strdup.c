@@ -25,7 +25,7 @@ char *_strdup(char *str)
 			*(str_ + i) = *(str + i);
 			i++;
 		}
-		*(str_ + 1) = '\0';
+		*(str_ + i) = '\0';
 	}
 	else
 		return (0);
