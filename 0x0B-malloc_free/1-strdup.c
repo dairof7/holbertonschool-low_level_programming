@@ -14,6 +14,8 @@ char *_strdup(char *str)
 
 	size = _strlen(str);
 	str_ = malloc(sizeof(char) * size);
+	
+	
 	if (size != 0)
 	{
 		while (i < size)
