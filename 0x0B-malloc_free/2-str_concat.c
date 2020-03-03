@@ -16,9 +16,15 @@ char *str_concat(char *s1, char *s2)
 	if ((s1 == NULL) && (s2 == NULL))
 		return (NULL);
 	else if (s1 == NULL)
+	{
 		s1 = malloc(1);
+		*s1 = '\0';
+	}
 	else if (s2 == NULL)
+	{
 		s2 = malloc(1);
+		*s2 = '\0';
+	}
 	while (*(s1 + sizes1))
 		sizes1++;
 	while (*(s2 + sizes2))
