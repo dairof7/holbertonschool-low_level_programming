@@ -2,38 +2,44 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * alloc_grid - memory alloc matrix
- * @width: colums (int)
- * @height: rows (int)
- *
- * Return: pointer to new matrix
+ * alloc_grid - entry point.
+ * @width: colums of the array.
+ * @height: rows of the array.
+ * Return:  An array of two dimensional.
  */
 int **alloc_grid(int width, int height)
 {
-	int i = 0, j = 0;
-	int **matrix;
-
-	matrix = (int **) malloc(height * sizeof(int *));
+	int **m;
+	int i, x, y;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-
-	if (matrix == NULL)
-		return (matrix);
-
+	/* Assign memory at the rows */
+	m = (int **) malloc(height * sizeof(int *));
+	if (m == NULL)
+	{
+		free(m);
+		return (0);
+	}
+	/* Assign memeory to each element*/
 	for (i = 0; i < height; i++)
 	{
-		matrix[i] = (int *) malloc(width * sizeof(int));
-
-		if (matrix[i] == NULL)
+		m[i] = (int *) malloc(width * sizeof(int));
+		if (m[i] == NULL)
 		{
-			return (matrix);
+			for (; i >= 0; i--)
+				free(m[i]);
+			free(m);
+			return (0);
 		}
 	}
-
-	for (i = 0; i < height; i++)
-		for (j = 0; j < width; j++)
-			matrix[i][j] = 0;
-
-	return (matrix);
+	/* Initialize each element */
+	for (x = 0; x < height; x++)
+	{
+		for (y = 0; y < width; y++)
+		{
+			m[x][y] = 0;
+		}
+	}
+	return (m);
 }
