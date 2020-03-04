@@ -14,23 +14,21 @@ int **alloc_grid(int width, int height)
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-	/* Assign memory at the rows */
 	m = (int **) malloc(height * sizeof(int *));
 	if (m == NULL)
 	{
-		free(m);
 		return (0);
 	}
-	/* Assign memeory to each element*/
 	for (i = 0; i < height; i++)
 	{
 		m[i] = (int *) malloc(width * sizeof(int));
 		if (m[i] == NULL)
 		{
+			while (i >= 0)
+				free(m[i--]);
 			return (0);
 		}
 	}
-	/* Initialize each element */
 	for (x = 0; x < height; x++)
 	{
 		for (y = 0; y < width; y++)
