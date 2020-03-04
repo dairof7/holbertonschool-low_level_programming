@@ -1,6 +1,4 @@
-#include <stdio.h>
 #include <stdlib.h>
-
 /**
  * *str_concat - create array
  * @s1: input array
@@ -11,7 +9,6 @@ char *str_concat(char *s1, char *s2)
 {
 	int i = 0, sizes1 = 0, sizes2 = 0, j = 0;
 	char *str_;
-
 
 	if ((s1 == NULL) && (s2 == NULL))
 	{
@@ -35,26 +32,18 @@ char *str_concat(char *s1, char *s2)
 	while (*(s2 + sizes2))
 		sizes2++;
 	sizes2++;
-
 	str_ = malloc((sizeof(char) * sizes1 + sizeof(char) * sizes2));
 	if (str_ != NULL)
 	{
-		while (i < sizes1)
-		{
+		for (; i < sizes1; i++)
 			*(str_ + i) = *(s1 + i);
-			i++;
-		}
-		while (j < sizes2)
+		for (; j < sizes2; j++)
 		{
 			*(str_ + i) = *(s2 + j);
-			j++;
 			i++;
 		}
 	}
 	else
-	{
 		return (NULL);
-	}
-
 	return (str_);
 }
