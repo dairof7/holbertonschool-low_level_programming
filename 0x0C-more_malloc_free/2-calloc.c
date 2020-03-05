@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
+
 /**
  * *_calloc - calloc function.
  * @nmemb: number of elements.
