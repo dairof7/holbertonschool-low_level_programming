@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <string.h>
 /**
  * *string_nconcat - create array
  * @s1: input array
@@ -18,9 +17,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	sizes1 = strlen(s1);
-	sizes2 = strlen(s2);
-	sizes2++;
+	while (*(s1 + sizes1))
+		sizes1++;
+	while (*(s2 + sizes2))
+		sizes2++;
 	if (n >= sizes2)
 		str_ = malloc((sizeof(char) * sizes1 + sizeof(char) * sizes2) + 1);
 	else
@@ -46,5 +46,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else
 		return (NULL);
+	str_[i] = '\0';
 	return (str_);
 }
