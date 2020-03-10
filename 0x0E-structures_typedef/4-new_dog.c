@@ -1,5 +1,4 @@
 #include "dog.h"
-#include <stdio.h>
 #include <stdlib.h>
 /**
  * new_dog - initialize a variable of type struct dog.
@@ -25,19 +24,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(new);
 		return (NULL);
 	}
+	while (name[i])
+		i++;
+	newname = malloc(sizeof(char) * i + 1);
+	if (newname == NULL)
+		return (NULL);
 	if (owner == NULL)
 	{
 		free(name);
 		free(new);
 		return (NULL);
 	}
-	while (name[i])
-		i++;
 	while (owner[j])
 		j++;
-	newname = malloc(sizeof(char) * i + 1);
-	if (newname == NULL)
-		return (NULL);
 	newowner = malloc(sizeof(char) * j + 1);
 	if (newowner == NULL)
 	{
