@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * print_name -  Write a function that prints a name.
  * @name: struct
@@ -6,5 +7,8 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	f(name);
+	if (name == NULL)
+		f("");
+	else
+		f(name);
 }
