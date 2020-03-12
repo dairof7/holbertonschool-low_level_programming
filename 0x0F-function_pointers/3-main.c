@@ -15,7 +15,7 @@ int main(int ac, char **av)
 	int res;
 
 	ac = ac;
-	if (ac > 4)
+	if (ac != 4)
 	{
 		printf("Error\n");
 		exit(99);
@@ -26,11 +26,12 @@ int main(int ac, char **av)
 		exit(100);
 	}
 	p = get_op_func(av[2]);
-		if (p == NULL)
+	if (p == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-		res = p(atoi(av[1]), atoi(av[3]));
+	res = p(atoi(av[1]), atoi(av[3]));
 	printf("%d\n", res);
+	return (0);
 }
