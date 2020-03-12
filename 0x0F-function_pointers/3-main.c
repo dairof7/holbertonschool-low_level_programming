@@ -18,7 +18,7 @@ int main(int ac, char **av)
 	if (ac != 4)
 	{
 		printf("Error\n");
-		exit(99);
+		exit(98);
 	}
 	if ((*av[2] == '/' || *av[2] == '%') && *av[3] == '0')
 	{
