@@ -1,79 +1,95 @@
 #include "variadic_functions.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
+
 /**
- * print_all -  function that prints all.
- * @format: list of types of arguments passed to the function
+ * print_c - print a char
+ * @c: char to print
+ * Description: uses va_arg to print va_list char type;
+ * Return: void
+ */
+void print_c(va_list c)
+{
+	printf("%c", va_arg(c, int));
+}
+
+/**
+ * print_i - prints an int
+ * @i: int to print
+ * Description: uses va_arg to print va_list int type
+ * Return: void
+ */
+void print_i(va_list i)
+{
+	printf("%d", va_arg(i, int));
+}
+
+/**
+ * print_f - prints a float
+ * @f: float to print
+ * Description: uses va_arg to print va_list float type
+ * Return: void
+ */
+void print_f(va_list f)
+{
+	printf("%f", va_arg(f, double));
+}
+
+
+/**
+ * print_s - prints a string
+ * @s: string to print
+ * Description: uses va_arg to print va_list string type
+ * Return: void
+ */
+void print_s(va_list s)
+{
+	char *str = va_arg(s, char *);
+
+	if (str == NULL)
+		str = "(nil)";
+	printf("%s", str);
+}
+
+/**
+ * print_all - prints anything
+ * @format: list of argument types passed to the function
+ * Description: uses va_list of type format struct to print the input
+ * In the struct t = type and f = especific format function.
+ * Return: void
  */
 void print_all(const char * const format, ...)
 {
-int i = 0, j = 0;
-va_list list;
-char *separator = "";
-
-va_start(list, format);
-	op_t ops[] = {
-		{"c", f_char},
-		{"i", f_int},
-		{"f", f_float},
-		{"s", fp_char},
+	unsigned int i, j;
+	op_t p[] = {
+		{"c", print_c},
+		{"i", print_i},
+		{"f", print_f},
+		{"s", print_s},
 		{NULL, NULL}
-		};
-		while (format[i] && format)
+	};
+	va_list valist;
+	char *separator = "";
+
+	va_start(valist, format);
+	i = 0;
+	while (format && format[i])
+	{
+		j = 0;
+		while (p[j].op != NULL)
 		{
-			j = 0;
-			while (ops[j].op)
+			if (*(p[j].op) == format[i])
 			{
-				if (format[i] == ops[j].op[0])
-				{
-					printf("%s", separator);
-					ops[j].f(list);
-					separator = ", ";
-					break;
-				}
-				j++;
+				printf("%s", separator);
+				p[j].f(valist);
+				separator = ", ";
+				break;
 			}
-		i++;
+			j++;
 		}
-	va_end(list);
+		i++;
+	}
+	va_end(valist);
 	printf("\n");
-}
-
-/**
- * f_char -  function that prints a char.
- * @list: list of arguments passed to the function
- */
-void f_char(va_list list)
-{
-	printf("%c", va_arg(list, int));
-}
-/**
- * f_int -  function that prints a integer.
-* @list: list of arguments passed to the function
- */
-void f_int(va_list list)
-{
-	printf("%d", va_arg(list, int));
-}
-/**
- * f_float -  function that prints float.
-* @list: list of arguments passed to the function
- */
-void f_float(va_list list)
-{
-	printf("%f", va_arg(list, double));
-}
-/**
- * fp_char -  function that prints a string.
-* @list: list of arguments passed to the function
- */
-void fp_char(va_list list)
-{
-	char *str;
-
-	str = va_arg(list, char *);
-	if (str != NULL)
-		printf("%s", str);
-	else
-		printf("(nil)");
 }
