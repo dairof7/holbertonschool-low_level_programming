@@ -19,7 +19,7 @@ va_start(list, format);
 		{"s", fp_char},
 		{NULL, NULL}
 		};
-		while (format[i])
+		while (format[i] && format)
 		{
 			j = 0;
 			while (ops[j].op)
@@ -35,8 +35,8 @@ va_start(list, format);
 			}
 		i++;
 		}
-	printf("\n");
 	va_end(list);
+	printf("\n");
 }
 
 /**
