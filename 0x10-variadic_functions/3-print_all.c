@@ -33,13 +33,11 @@ void f_float(va_list list)
  */
 void fp_char(va_list list)
 {
-	char *str;
+	char *str = va_arg(list, char *);
 
-	str = va_arg(list, char *);
-	if (str != NULL)
-		printf("%s", str);
-	else
-		printf("(nil)");
+	if (str == NULL)
+		str = "(nil)";
+	printf("%s", str);
 }
 
 /**
