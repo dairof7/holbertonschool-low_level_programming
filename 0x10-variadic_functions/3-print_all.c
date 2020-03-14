@@ -1,6 +1,5 @@
 #include "variadic_functions.h"
 #include <stdio.h>
-#include <string.h>
 /**
  * print_all -  function that prints all.
  * @format: list of types of arguments passed to the function
@@ -10,6 +9,7 @@ void print_all(const char * const format, ...)
 int i = 0, j = 0;
 va_list list;
 char *separator = "";
+
 va_start(list, format);
 	op_t ops[] = {
 		{"c", f_char},
@@ -69,6 +69,7 @@ void f_float(va_list list)
 void fp_char(va_list list)
 {
 	char *str;
+
 	str = va_arg(list, char *);
 	if (str != NULL)
 		printf("%s", str);
