@@ -1,5 +1,6 @@
 #include "variadic_functions.h"
 #include <stdio.h>
+#include <stdarg.h>
 /**
  * print_all -  function that prints all.
  * @format: list of types of arguments passed to the function
@@ -74,5 +75,5 @@ void fp_char(va_list list)
 	if (str != NULL)
 		printf("%s", str);
 	else
-		printf("(neil)");
+		printf("(nil)");
 }
