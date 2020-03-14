@@ -4,52 +4,42 @@
 #include <stdarg.h>
 
 /**
- * print_c - print a char
- * @c: char to print
- * Description: uses va_arg to print va_list char type;
- * Return: void
+ * f_char -  function that prints a char.
+ * @list: list of arguments passed to the function
  */
-void print_c(va_list c)
+void f_char(va_list list)
 {
-	printf("%c", va_arg(c, int));
+	printf("%c", va_arg(list, int));
 }
-
 /**
- * print_i - prints an int
- * @i: int to print
- * Description: uses va_arg to print va_list int type
- * Return: void
+ * f_int -  function that prints a integer.
+* @list: list of arguments passed to the function
  */
-void print_i(va_list i)
+void f_int(va_list list)
 {
-	printf("%d", va_arg(i, int));
+	printf("%d", va_arg(list, int));
 }
-
 /**
- * print_f - prints a float
- * @f: float to print
- * Description: uses va_arg to print va_list float type
- * Return: void
+ * f_float -  function that prints float.
+* @list: list of arguments passed to the function
  */
-void print_f(va_list f)
+void f_float(va_list list)
 {
-	printf("%f", va_arg(f, double));
+	printf("%f", va_arg(list, double));
 }
-
-
 /**
- * print_s - prints a string
- * @s: string to print
- * Description: uses va_arg to print va_list string type
- * Return: void
+ * fp_char -  function that prints a string.
+* @list: list of arguments passed to the function
  */
-void print_s(va_list s)
+void fp_char(va_list list)
 {
-	char *str = va_arg(s, char *);
+	char *str;
 
-	if (str == NULL)
-		str = "(nil)";
-	printf("%s", str);
+	str = va_arg(list, char *);
+	if (str != NULL)
+		printf("%s", str);
+	else
+		printf("(nil)");
 }
 
 /**
@@ -62,27 +52,27 @@ void print_s(va_list s)
 void print_all(const char * const format, ...)
 {
 	unsigned int i, j;
-	op_t p[] = {
-		{"c", print_c},
-		{"i", print_i},
-		{"f", print_f},
-		{"s", print_s},
+	op_t ops[] = {
+		{"c", f_char},
+		{"i", f_int},
+		{"f", f_float},
+		{"s", fp_char},
 		{NULL, NULL}
-	};
-	va_list valist;
+		};
+	va_list list;
 	char *separator = "";
 
-	va_start(valist, format);
+	va_start(list, format);
 	i = 0;
 	while (format && format[i])
 	{
 		j = 0;
-		while (p[j].op != NULL)
+		while (ops[j].op != NULL)
 		{
-			if (*(p[j].op) == format[i])
+			if (*(ops[j].op) == format[i])
 			{
 				printf("%s", separator);
-				p[j].f(valist);
+				ops[j].f(list);
 				separator = ", ";
 				break;
 			}
@@ -90,6 +80,6 @@ void print_all(const char * const format, ...)
 		}
 		i++;
 	}
-	va_end(valist);
+	va_end(list);
 	printf("\n");
 }
