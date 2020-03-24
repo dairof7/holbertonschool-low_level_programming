@@ -25,10 +25,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		*head = new;
 		return (*head);
 	}
-printf("%d",idx);
 	for (i = 0; i < idx; i++)
 	{
-		printf("%d",i);
 		ant = temp;
 		temp = temp->next;
 	}
