@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * set_bit - sets the value of a bit to 0 at a given index
+ * clear_bit - sets the value of a bit to 0 at a given index
  * @n: base 10 number
  * @index: index to insert
  * Return: 1 if it worked, or -1 if an error occurred
