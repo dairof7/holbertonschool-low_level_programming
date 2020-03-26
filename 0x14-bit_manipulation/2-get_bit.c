@@ -7,23 +7,15 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int i = 0, max;
+	unsigned long int cleaner, cleared;
 
-	max = (sizeof(unsigned long int) * 8 - 1);
-	if (index > max)
+	if (index > sizeof(unsigned long int) * 8 - 1)
 		return (-1);
+	/*'1' moved index times*/
+	cleaner = 1 << index;
+	cleared = cleaner & n;
 
-	if (n == 0 && index == 0)
-		return (0);
-	while (n != 0)
-	{
-		if (i == index)
-			return (n & 1);
-		n = n >> 1;
-		i++;
-	}
-	if (i <= index)
-		return (-1);
-
-	return (-1);
+	if (cleaner == cleared)
+		return (1);
+	return (0);
 }
