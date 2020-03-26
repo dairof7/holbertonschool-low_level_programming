@@ -26,7 +26,6 @@ unsigned int binary_to_uint(const char *b)
 		else
 			return (0);
 		i++;
-		printf("<%d>", sum);
 	}
 
 	return (sum);
