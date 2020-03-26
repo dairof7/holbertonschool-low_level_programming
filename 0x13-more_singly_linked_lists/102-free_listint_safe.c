@@ -21,7 +21,7 @@ size_t free_listint_safe(listint_t **h)
 		len++;
 		free(temp);
 
-		if (*h > (*h)->next)
+		if (*h >= temp)
 		{
 			*h = NULL;
 			return (len);
