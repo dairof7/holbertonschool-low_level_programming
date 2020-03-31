@@ -17,13 +17,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 	fd = open(filename, O_RDONLY);
-	if
+	
 
 	r = read(fd, str, letters);
 
 	w = write(STDOUT_FILENO, str, r);
 	close(fd);
-	if ((fd == -1) || (r == -1) || (r == -1))
+	if ((fd == -1) || (r == -1) || (w == -1))
 	{
 		free(str);
 		return (0);
