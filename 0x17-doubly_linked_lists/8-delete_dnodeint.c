@@ -32,10 +32,18 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		else
 			return (-1);
 	}
-
 	del = ant->next;
-	ant->next = del->next;
-	del->next->prev = ant;
+	if (del != NULL && del->next != NULL)
+	{
+		ant->next = del->next;
+		del->next->prev = ant;
+	}
+	else if (del != NULL && del->next == NULL)
+	{
+		ant->next = NULL;
+	}
+	else
+		return (-1);
 	free(del);
 	return (1);
 }
