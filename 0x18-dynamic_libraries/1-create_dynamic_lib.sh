@@ -1,2 +1,2 @@
 !#/bin/bash
-gcc -fPIC *.c -shared -o liball.so
+gcc -fPIC -Wall -Werror -Wextra -pedantic *.c -shared -o liball.so | rm *.o
