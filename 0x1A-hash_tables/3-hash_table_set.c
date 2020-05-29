@@ -10,10 +10,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *temp = NULL, *new = NULL;
 	unsigned long int index = 0;
-	
-	temp = ht->array[index];
+
 	index = key_index((const unsigned char *)key, ht->size);
-	if (temp == NULL)
+	temp = ht->array[index];
+	if (ht->array[index] == NULL)
 	{
 		temp = malloc(sizeof(hash_node_t) * 1);
 		temp->key = strdup(key), temp->value = strdup(value);
