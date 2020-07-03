@@ -2,6 +2,7 @@
 
 """ Module to calculate island perimeter """
 
+
 def island_perimeter(grid):
     """ returns the perimeter of the island insert by grid list """
     sum = 0
