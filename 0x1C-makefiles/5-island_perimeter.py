@@ -9,9 +9,10 @@ def island_perimeter(grid):
     x = len(grid)
     y = len(grid[0])
 
+    
 
-    for i in range(1, x-1):
-        for j in range(1, y-1):
+    for i in range(1, x - 1):
+        for j in range(1, y - 1):
             if grid[i][j] == 1:
                 if grid[i][j - 1] == 0:
                     sum += 1
