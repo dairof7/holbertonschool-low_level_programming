@@ -18,22 +18,20 @@ int binary_search(int *array, size_t size, int value)
 	ini = 0;
 	end = size - 1;
 	i = (ini + end) / 2;
-	print_array(array, ini, end);
-	while (ini < end)
+	while (ini <= end)
 	{
+		print_array(array, ini, end);
+		i = (ini + end) / 2;
 		if (array[i] == value)
 			return (i);
 		else if (array[i] > value)
 		{
 			end = i - 1;
-			print_array(array, ini, end);
 		}
-		else if (array[i] < value)
+		else
 		{
 			ini = i + 1;
-			print_array(array, ini, end);
 		}
-		i = (ini + end) / 2;
 	}
 	return (-1);
 }
