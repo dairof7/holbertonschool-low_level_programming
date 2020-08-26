@@ -13,6 +13,8 @@ int binary_search(int *array, size_t size, int value)
 	size_t ini, end;
 	int i;
 
+	if (array == NULL)
+		return (-1);
 	ini = 0;
 	end = size - 1;
 	i = (ini + end) / 2;
