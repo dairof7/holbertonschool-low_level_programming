@@ -1,4 +1,4 @@
-# Holbertonschool Low Level Programming 👨🏻‍💻
+# Holbertonschool Low Level Programming 
 
 ## Description
 
