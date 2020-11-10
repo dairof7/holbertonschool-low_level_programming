@@ -41,4 +41,4 @@ This repository contains all the project tasks of Holberton School Low level pro
 |[0x1A-hash_tables](https://github.com/dairof7/holbertonschool-low_level_programming/tree/master/0x1A-hash_tables "0x1A-hash_tables")
 
 ## Author :copyright:
-**Dairo Facundo Duarte** - twitter [@dFacundo2](https://twitter.com/dFacundo2) - LinkedIn [Dairo Facundo](www.linkedin.com/in/dairo-facundo)
+**Dairo Facundo Duarte** - twitter [@dFacundo2](https://twitter.com/dFacundo2) - LinkedIn [Dairo Facundo](https://linkedin.com/in/dairo-facundo)
