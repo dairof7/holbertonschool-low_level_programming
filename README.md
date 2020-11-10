@@ -13,8 +13,8 @@ This repository contains all the project tasks of Holberton School Low level pro
 
 
 ## Content
-| Name | Description |
-|---|---|
+| Name |
+|---|
 |[0x00-hello_world](https://github.com/dairof7/holbertonschool-low_level_programming/tree/master/0x00-hello_world "0x00-hello_world")
 |[0x01-variables_if_else_while](https://github.com/dairof7/holbertonschool-low_level_programming/tree/master/0x01-variables_if_else_while "0x01-variables_if_else_while")
 |[0x02-functions_nested_loops](https://github.com/dairof7/holbertonschool-low_level_programming/tree/master/0x02-functions_nested_loops "0x02-functions_nested_loops")
